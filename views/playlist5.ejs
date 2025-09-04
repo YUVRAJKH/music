@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= singer %> Playlist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    
+     body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0 ;
+    }
+
+    .ccccc {
+      background-image:url("/images/3959675.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height:150%;
+      
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .cardContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(1px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      width: 200px;
+      padding: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top:20px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0 0 10px;
+    }
+
+    .play-btn {
+      background-color: #00ffaa;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .play-btn:hover {
+      background-color: #00dd99;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    ul li {
+      margin: 10px auto;
+      text-align: center;
+      font-size: 16px;
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+  .run {
+    position:absolute;
+    bottom: 0;
+    left: 100;
+    background-color:#ffffff0c;
+    padding: 11px;
+    width: 100%;
+    z-index: 999;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom:-350px;
+    border: solid black 2px;
+}
+  </style>
+</head>
+<body>
+  <div Class="ccccc">
+  <div class="cardContainer">
+<div class="card">
+   <img src="https://i.ytimg.com/vi/knGCfzm4jWs/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLASEALHlKpxthNEEev7cDooXgiMQg">
+  <h2>SIRRA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Guru Randhawa - SIRRA ( Official Video ).mp3')">Play</button>
+</div>
+
+<div class="card">
+   <img  src="https://i.ytimg.com/vi/7GJY94zl434/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLALM8I4MKpIO4HDLVUgb8h6Gq1JbA">
+  <h2> QATAL </h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Guru Randhawa - QATAL - Without Prejudice.mp3')">Play</button>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/bhyx0FEiF9E/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLB470AzqcOmmxgn9cKzVkwlhbW5Hg">  
+  <h2>KARIZMA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'MC STΔN - 911 Porsche (Official music Video)  MEHFEEL  2024.mp3')">Play</button>
+</div>
+<div class="card">
+<img src="https://i.ytimg.com/vi/Q0xFN10WJGc/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLCBivUNID_u21CyYK6R77NRoTpX3g"> 
+ <h2>JAANEMAN</h2> 
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'KARIZMA - Guru Randhawa ft. Renuka Panwar.mp3')">Play</button>
+</div>
+  <ul>
+    <% songs.forEach(song => { %>
+    <% }); %>
+  </ul>
+
+  <audio class= 'run' id="audioPlayer" controls style="display:flex;"></audio>
+  </div>
+</div>
+
+  <script>
+    function playSong(singer, songName) {
+      const audioPlayer = document.getElementById("audioPlayer");
+      audioPlayer.src = `/songs/${singer}/${songName}`;
+      audioPlayer.style.display = "block";
+      audioPlayer.play();
+    }
+  </script>
+
+</body>
+</html>

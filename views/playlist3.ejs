@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= singer %> Playlist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    
+     body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0 ;
+    }
+
+    .ccccc {
+      background-image:url("/images/mc-stan-fashion-news-india-yd5b8v9f0z6mvds7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height:150%;
+      
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .cardContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(1px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      width: 200px;
+      padding: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top:20px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0 0 10px;
+    }
+
+    .play-btn {
+      background-color: #00ffaa;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .play-btn:hover {
+      background-color: #00dd99;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    ul li {
+      margin: 10px auto;
+      text-align: center;
+      font-size: 16px;
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+  .run {
+    position:absolute;
+    bottom: 0;
+    left: 100;
+    background-color:#ffffff0c;
+    padding: 11px;
+    width: 100%;
+    z-index: 999;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom:-350px;
+    border: solid black 2px;
+}
+  </style>
+</head>
+<body>
+  <div Class="ccccc">
+  <div class="cardContainer">
+<div class="card">
+   <img src="https://i.ytimg.com/vi/GbXtCRCT0Ig/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLAi1Lj91jXvxqLK8tLXNkeQQjfr_A">
+  <h2>BASTI KA HASTI</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'MC STAN - Basti Ka Hasti (Official Video)  INSAAN  2023.mp3')">Play</button>
+</div>
+
+<div class="card">
+   <img src="https://i.ytimg.com/vi/pg2tsJErYH4/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLCpnzc1T-d5mGWVkqGWfwhfVPitRw">
+  <h2> HAATH VARTHI </h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'MC STΔN  X @KSHMRmusic    HAATH VARTHI  (Official Video)  2023.mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src="https://i.ytimg.com/vi/Rsj3tQmO8Yc/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBszbCVwYXtLeGu4VKfl8oxQ8_KGQ">
+    <h2>NUMB</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'MC STΔN - 911 Porsche (Official music Video)  MEHFEEL  2024.mp3')">Play</button>
+</div>
+<div class="card">
+   <img src="https://i.ytimg.com/vi/MZ-GQNKNShw/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLAtWEPy1fJ2WSJubRWwRyoWqM27Dg">
+  <h2>REHMANI KEEDA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'MC STΔN - NUMB (Official music Video)  MEHFEEL  2024.mp3')">Play</button>
+</div>
+<div class="card">
+  <img src="https://i.ytimg.com/vi/UbsM9KCTbsw/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLC1p6SaLqbJ2tT-p7odHH-862rBlg">
+  <h2>SHANA BANN</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'MC STΔN - REHMANI KEEDA ( Official Audio ).mp3')">Play</button>
+</div>
+<div class="card">
+  <img src="https://i.ytimg.com/vi/TD1idODNuTE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLA6N8oYvUBmZXuMrQNrD__Z8kGX1Q">
+  <h2>911 PORSCHE</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>','EMIWAY BANTAI  -  BADSHAH  (PROD BY TONY JAMES )  OFFICIAL MUSIC VIDEO.mp3')">Play</button>
+</div>
+<div class="card">
+  <img src="https://i.ytimg.com/vi/XY7oh7LDZhk/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLChq8V35np8x2Q8VkuOeWQpKIv8LA">
+  <h2>ISHAAN</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>','EMIWAY BANTAI  -  BADSHAH  (PROD BY TONY JAMES )  OFFICIAL MUSIC VIDEO.mp3')">Play</button>
+</div>
+  <ul>
+    <% songs.forEach(song => { %>
+    <% }); %>
+  </ul>
+
+  <audio class= 'run' id="audioPlayer" controls style="display:flex;"></audio>
+  </div>
+</div>
+
+  <script>
+    function playSong(singer, songName) {
+      const audioPlayer = document.getElementById("audioPlayer");
+      audioPlayer.src = `/songs/${singer}/${songName}`;
+      audioPlayer.style.display = "block";
+      audioPlayer.play();
+    }
+  </script>
+
+</body>
+</html>

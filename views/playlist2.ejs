@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= singer %> Playlist
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ccccc {
+            background-image: url("/images/yo-yo-honey-singh-loca-song-m5tm5kye592gh76a.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 150%;
+
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .cardContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(1px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            width: 200px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #ccc;
+            margin: 0 0 10px;
+        }
+
+        .play-btn {
+            background-color: #00ffaa;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .play-btn:hover {
+            background-color: #00dd99;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        ul li {
+            margin: 10px auto;
+            text-align: center;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        audio {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .run {
+            position: absolute;
+            bottom: 0;
+            left: 100;
+            background-color: #ffffff0c;
+            padding: 11px;
+            width: 100%;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -350px;
+            border: solid black 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div Class="ccccc">
+        <div class="cardContainer">
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/Hw3NH_-_ja8/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAhFN-YGLzTbJkW9OaAn52ixoUA0g">
+                <h2>JINGLE BELL</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>', 'Jingle Bell  Hommie Dilliwala Ft. Yo Yo Honey Singh (Official Video).mp3')">Play</button>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/KGn-erOG-Bs/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBbNBg4zZNBpESjoAOLYWEbxi98jQ">
+                <h2> LAAL PARI</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>', 'LAAL PARI (Song)_ Yo Yo Honey Singh  Sajid Nadiadwala  Tarun Mansukhani  Housefull 5 - 6th June.mp3')">Play</button>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/XO8wew38VM8/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC9Cg8tgP0eer0-eKAkzP5fXuDvzg">
+                <h2>MILLIONAIRE</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>', 'MILLIONAIRE SONG (Full Video)_ @YoYoHoneySingh   GLORY  BHUSHAN KUMAR.mp3')">Play</button>
+            </div>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/W8x6Dwyj0-A/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCcJTBSQNKERaLPoeiaOILm7bZ7zw">
+                <h2>MANIAC</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>', 'MANIAC (Official Video)_ YO YO HONEY SINGH  ESHA GUPTA  GLORY  BHUSHAN KUMAR.mp3')">Play</button>
+            </div>
+            <div class="card">
+                <img
+                    src=https://i.ytimg.com/vi/a-PAcmi5Kas/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBFAlgsUcRDwpZEz5wI9vE9H_mMDg>
+                <h2>PAYAL</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>', 'PAYAL SONG (Official Video)_ YO YO HONEY SINGH  NORA FATEHI  PARADOX  GLORY  BHUSHAN KUMAR.mp3')">Play</button>
+            </div>
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/eizmCZv3aKI/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBlZ0-MlIObu1R2EvzdCZcX3e7zSQ">
+                    <H2>BROWN RANG</H2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>','Brown Rang.mp3')">Play</button>
+            </div>
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/TwFBtV13KQQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCereaRQzKHpFA0o0khqfnf5YtXBQ">
+                <h2>ONE BOTTLE DOWN</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>', 'One Bottle Down.mp3')">Play</button>
+            </div>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/5oExKMYIE9U/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB1UDwd3Jz7DTEZ_H-dzs3d2DwD-w">
+                <h2>KALAASTAR</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>','KALAASTAR - Full Video  Honey 3.0  Yo Yo Honey Singh & Sonakshi Sinha  Zee Music Originals.mp3')">Play</button>
+            </div>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/I5iCw4CIpAU/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDgc6NS_TpkavnyMnPbfQgCyk26AQ">
+                <h2>6:00 AM</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>','6 AM (Official Video)_ YO YO HONEY SINGH  HEERA SOHAL  GLORY  BHUSHAN KUMAR.mp3')">Play</button>
+            </div>
+             <div class="card">
+                <img src="https://i.ytimg.com/vi/EWRBHho2b_E/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBClejZssQXlcHWf1EKtdF5950z-w">
+                <h2>ONE THOUSAND MILES</h2>
+                <button class="play-btn"
+                    onclick="playSong('<%= singer %>','ONE THOUSAND MILES (Official Video)_ Yo Yo Honey Singh  Mandy Takhar  Desi Kalakaar Bhushan Kumar.mp3')">Play</button>
+            </div>
+            <ul>
+                <% songs.forEach(song=> { %>
+                    <% }); %>
+            </ul>
+
+            <audio class='run' id="audioPlayer" controls style="display:flex;"></audio>
+        </div>
+    </div>
+
+    <script>
+        function playSong(singer, songName) {
+            const audioPlayer = document.getElementById("audioPlayer");
+            audioPlayer.src = `/songs/${singer}/${songName}`;
+            audioPlayer.style.display = "block";
+            audioPlayer.play();
+        }
+    </script>
+
+</body>
+
+</html>

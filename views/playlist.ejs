@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= singer %> Playlist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    
+     body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0 ;
+    }
+
+    .ccccc {
+      background-image:url("/images/2680274.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height:150%;
+      
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .cardContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(1px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      width: 200px;
+      padding: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top:20px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0 0 10px;
+    }
+
+    .play-btn {
+      background-color: #00ffaa;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .play-btn:hover {
+      background-color: #00dd99;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    ul li {
+      margin: 10px auto;
+      text-align: center;
+      font-size: 16px;
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+  .run {
+    position:absolute;
+    bottom: 0;
+    left: 100;
+    background-color:#ffffff0c;
+    padding: 11px;
+    width: 100%;
+    z-index: 999;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom:-350px;
+    border: solid black 2px;
+}
+  </style>
+</head>
+<body>
+  <div Class="ccccc">
+  <div class="cardContainer">
+<div class="card">
+   <img  src="https://i.scdn.co/image/ab67616d0000b27374567e1ea8de537e6e4500fc">
+  <h2>SANAK</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Badshah - SANAK.mp3')">Play</button>
+</div>
+
+<div class="card">
+   <img src="https://i.scdn.co/image/ab67616d0000b273529133de1bab20f2d18ba930">
+  <h2>SATURADY SATURDAY</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Saturday Saturday .mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d0000b2737b8d8ca1a8e14506c8f35233" >
+  <h2>MERCY</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Mercy - Badshah.mp3')">Play</button>
+</div>
+<div class="card">
+   <img src="https://i.scdn.co/image/ab67616d0000b273a39ee4813868fda7c0784ac7">
+  <h2>BACH KE RAHNA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Bach Ke Rehna.mp3')">Play</button>
+</div>
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d0000b273c81e048d793858df7a1dbb6f">
+  <h2>PAAGAL</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Badshah-Paagal .mp3')">Play</button>
+</div>
+
+<!-- Additional Cards with New Images -->
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d0000b2738d42680432df790a238eb65b">
+  <h2>BACHPAN KA PAYAAR</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>','Bachpan Ka Pyaa.mp3')">Play</button>
+</div><div class="card">
+  <img src=https://i.scdn.co/image/ab67616d0000b273b81c306e6924c028ac8a0e56>
+  <h2>SHEHER KI LADKI</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Sheher Ki Ladki Song.mp3')">Play</button>
+</div>
+<div class="card">
+  <img src=https://i.scdn.co/image/ab67616d0000b2731236f9aabbd45bf852bdbd9c>
+  <h2>GENDA PHOOL</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Genda Phool .mp3')">Play</button>
+</div>
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d0000b273efe374ffabeb543840dee228">
+  <h2>JUGNU</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Badshah - Jugnu .mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d00001e029bb2d30b01ac2cada8a8ad03">
+  <h2>O'SAJNA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'O Sajna .mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d00001e02dd8f11e5b3c77cd2a9517ee0">
+  <h2>PROPER PATOLA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Proper Patola.mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d00001e0210c94c7cd311738c527ae46f" >
+  <h2>DJ WALEY BABU</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Badshah - DJ Waley Babu.mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d00001e02bc0ec443e91e4d89c893dd7f" >
+  <h2>GALIYON KE GHALIB</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Badshah - Galiyon ke Ghalib .mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src="https://i.scdn.co/image/ab67616d00001e025302f2bd772de9c93a8f309c">
+  <h2>MORNI</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Morni .mp3')">Play</button>
+</div><div class="card">
+  <img src="https://i.scdn.co/image/ab67616d0000b2733b37f6de72015eefce8ee5d3">
+  <h2>ABHI TOH PARTY</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Abhi Toh Party Shuru Hui Hai.mp3')">Play</button>
+</div>
+<div class="card">
+  <img src="https://i.ytimg.com/vi/ciLGHX_mq48/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLDeWHiJnJBqGx9uOov38Qu3xWnlBg">
+  <h2>DAAKU</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Badshah - Daaku.mp3')">Play</button>
+</div>
+  <ul>
+    <% songs.forEach(song => { %>
+    <% }); %>
+  </ul>
+
+  <audio class= 'run' id="audioPlayer" controls style="display:flex;"></audio>
+  </div>
+</div>
+
+  <script>
+    function playSong(singer, songName) {
+      const audioPlayer = document.getElementById("audioPlayer");
+      audioPlayer.src = `/songs/${singer}/${songName}`;
+      audioPlayer.style.display = "block";
+      audioPlayer.play();
+    }
+  </script>
+
+</body>
+</html>

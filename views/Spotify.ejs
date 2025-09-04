@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Playlist</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>spotify - web player : music for all</title>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+</head>
+
+<body>
+  <div class="background-container">
+    <video autoplay muted loop id="bgVideo">
+      <source src="/video/48569-454825064.mp4" type="video/mp4" />
+    </video>
+    <div class="content">
+      <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
+      <div class="container flex bg-black">
+        <div class="left x">
+          <div class="home bg-grey rounded m-1 p-1">
+            <div class="logo">
+              <img class="invert" src="images/logo.png" alt="Logo" width="100px" height="100px">
+
+            </div>
+            <ul>
+              <li><img class="invert" src="images/home.svg" alt="Home"> Home</li>
+              <form action="/search" method="GET">
+                <div class="search-container">
+                  <div class="search-box">
+                    <input type="text" name="query" placeholder="Search song name..." value="<%= query %>" />
+                    <button type="submit">Search</button>
+                  </div>
+              </form>
+              <div class="search-results">
+
+                <% if (results && results.length> 0) { %>
+                  <ul>
+                    <% results.forEach(song=> { %>
+                      <li>
+                        <strong class="hamba">
+                          <%= song.name %>
+                        </strong><br>
+                        <audio controls class="dog">
+                          <source src="<%= song.path %>" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                        </audio>
+                      </li>
+                      <% }) %>
+                  </ul>
+                  <% } else if (results) { %>
+                    <p>No songs found.</p>
+                    <% } %>
+              </div>
+            </ul>
+          </div>
+          <div class="library bg-grey rounded m-1 p-1">
+            <div class="heading">
+              <img class="invert" src="images/your playlist.svg" alt="Your Playlist">
+              <h2>Your Library</h2>
+            </div>
+            <div class="song-list">
+              <ul>
+                <li>KAM DHAM 25</li>
+                <li>BOM DIGGI DIGGI</li>
+                <li>MILLIONAIRE SONG</li>
+                <li>SULTAN</li>
+                <li>MAKNA</li>
+                <li>LAAL PARI</li>
+                <li>TOOFAN</li>
+                <li>KALA CHASHMA</li>
+                <li>COMPANY</li>
+                <li>RX 100</li>
+                <li>SHAKY SHAKY</li>
+                <li>PUSHPA PUSHPA</li>
+                <li>TAUBA TAUBA</li>
+                <li>ONE BOTTLE DOWN</li>
+                <li>DESPACITO</li>
+                <li>BAD BOY</li>
+                <li>BELIEVER</li>
+                <li>LEMONADE</li>
+                <li>GYPSY</li>
+                <li>SEE YOU AGAIN</li>
+                <li>BLINDING LIGHTS</li>
+                <li>LET ME LOVE YOU</li>
+                <li>CALM DOWN</li>
+                <li>SENORITA</li>
+                <li>PERFECT</li>
+                <li>ROCKSTAR</li>
+                <li>HALL OF FAME</li>
+                <li>NOT AFRAID</li>
+                <li>MEMORIES</li>
+                <li>SHAPE OF YOU</li>
+                <li>CHEAP THRILLS</li>
+                <li>BROWN MUNDE</li>
+                <li>EXCUSES</li>
+                <li>PASOORI</li>
+                <li>BIJLEE BIJLEE</li>
+                <li>JUGNU</li>
+                <li>CHOGADA</li>
+                <li>NASHA</li>
+                <li>MAN MERA</li>
+                <li>LEVITATING</li>
+                <li>KESARIYA</li>
+                <li>APNA BANA LE</li>
+                <li>TUM HI HO</li>
+                <li>RAABTA</li>
+                <li>JEENA JEENA</li>
+                <li>TERA BAN JAUNGA</li>
+                <li>AGAR TUM SAATH HO</li>
+                <li>CHHOD DIYA</li>
+                <li>BEWAFA TERA MASOOM CHEHRA</li>
+                <li>PHIR MOHABBAT</li>
+                <li>CHAND BALIAAN</li>
+                <li>DIL KO KARAAR AAYA</li>
+                <li>RANJHA</li>
+                <li>HEERIYE</li>
+                <li>BAD HABITS</li>
+                <li>ON MY WAY</li>
+                <li>FADED</li>
+                <li>WAITING FOR LOVE</li>
+                <li>ALONE</li>
+                <li>SUGAR & BROWNIES</li>
+                <li>THE NIGHTS</li>
+                <li>WAKE ME UP</li>
+                <li>STAY</li>
+                <li>WITHOUT ME</li>
+                <li>DON'T LET ME DOWN</li>
+                <li>CLOSER</li>
+                <li>SOMETHING JUST LIKE THIS</li>
+                <li>SUNFLOWER</li>
+                <li>GOOD 4 U</li>
+                <li>PEACHES</li>
+                <li>YUMMY</li>
+                <li>STITCHES</li>
+                <li>TREAT YOU BETTER</li>
+                <li>THUNDER</li>
+                <li>RADHA</li>
+                <li>TERE VAASTE</li>
+                <li>BANJAARA</li>
+                <li>HUMSAFAR</li>
+                <li>GALLIYAN</li>
+                <li>TERE BIN</li>
+                <li>GULAAB</li>
+                <li>CHITTU</li>
+                <li>DHEERE DHEERE</li>
+                <li>AAJ SE TERI</li>
+                <li>RANG JO LAGYO</li>
+                <li>MAST MAGAN</li>
+                <li>SAUDA KHARA KHARA</li>
+                <li>BEKHAYALI</li>
+                <li>KHWAAB</li>
+                <li>AASHIQ BANAYA AAPNE</li>
+                <li>TUM MILE</li>
+                <li>ANIMAL TITLE TRACK</li>
+                <li>O MAHI O MAHI</li>
+                <li>JHOOME JO PATHAAN</li>
+                <li>BESHARAM RANG</li>
+                <li>CHHODO MERE HAATH</li>
+                <li>DUNIYA</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="header">
+            <div class="nav">
+              <img src="images/small.svg" alt="Navigation Icon">
+              <img src="images/grater then.svg" alt="Greater Than Icon">
+            </div>
+            <div class="button">
+              <a href="/Signup"><button class="signupbtn">Sign up</button></a>
+              <a href="/signin"><button class="loginbtn" ">Sign in</button></a>
+            </div>
+          </div>
+          <div class=" spotify-playlist">
+                  <h1>Heartune Playlist</h1>
+                  <div class="cardContainer">
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/mRpau3nCK5f3-hvQuUqTWUy5HLdLfMBIRIsxvOJmN58dJv74hZWt-qe4vam4aaTndtqdRE1h9uOwJLz_VA=w544-h544-l90-rj">
+                      <h2>KAM DHAM 25</h2>
+                      <p>DIVINE KAAM 25</p>
+                      <button class="tree play-btn" data-index="0"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/KYsJ2usJH69ZY3--fgbKneSKFGBTty3WXWCrvqd3mBWI248oc0hndO0pL2LortJ5Fsx31dMsAKLwAAQ=w544-h544-l90-rj">
+                      <h2> BOM DIGGI</h2>
+                      <p>ZACK KHIGNT </p>
+                      <button class="tree play-btn" data-index="1"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/0Xeyqa11v6fdHI-GkU1ReWrF21yDokQ8hRZ0utN6NAmLt6WMZMmayuCG6fvu_1-zIHb86RsDg3qctKun=w544-h544-l90-rj">
+                      <h2> MILLIONAIRE</h2>
+                      <p> YO YO HONEY SINGH</p>
+                      <button class="tree play-btn" data-index="2"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/JGtCqTwDcjhdYK37jqCiCKh4fFqRT5x9vBKGzPYqW-RFiyrl_rfAMHLa5DUHNsNt6a5OTfHpoUOpS0w7=w544-h544-l90-rj">
+                      <h2>SULTAN</h2>
+                      <p>ANANYA BHAT</p>
+                      <button class="tree play-btn" data-index="3"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/PhPhKD8DdRGa_07w2-NqvVXvLoH-O8lmAaoNEwTjoEsJqAPjVJGK8-8jZYXyH7EodYwNXAe1BKcOOFfi=w544-h544-l90-rj">
+                      <h2>MAKNA</h2>
+                      <p>TANISHK BAGCHI </p>
+                      <button class="tree play-btn" data-index="4"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/IlB_k-DBSPYz6lYVHNMn_MLKCxZk09Le4XopHv9SSyw9HSRiyO25W5nrbcBW9c8dohWufRlg7e5MG_haMg=w544-h544-l90-rj">
+                      <h2>LAAL PARI</h2>
+                      <p>YO YO HONEY SINGH</p>
+                      <button class="tree play-btn" data-index="5"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/41iUMn4UWLc1nMwECkPdxTCmltBjoF79stR_JZLYcoZa7y74eD9dqMMcmdlLwPn_7S9bxcURvOPZZ5z4=w544-h544-l90-rj">
+                      <h2>TOOFAN</h2>
+                      <p>A.R.RAHMAN</p>
+                      <button class="tree play-btn" data-index="6"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/EnAU_lisKXK2cCE9jI6k9dfPBnLIbOisqwGiAkczntFQ-zfhPFhIaIPOJ-paPM4hNvOz_C5wzGUvsfyK=w544-h544-l90-rj">
+                      <h2>KALA CHASHMA </h2>
+                      <p>AMAR ARSHI,BADSHA</p>
+                      <button class="tree play-btn" data-index="7"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/nH5_do4MO33ZgZQ8mJOSy7CdXxKubQCl26WsNiayQZfJHSV0LSFTqjr-l9tZ9QVINXrEUyLFh3wLQTs=w544-h544-l90-rj">
+                      <h2>COMPANY </h2>
+                      <p>EMIWAY BANTAI CAMPANY</p>
+                      <button class="tree play-btn" data-index="8"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/gXomNEdO-vfYXCRoiCLxDa3d7GvgpvL13PBMXkGQJAFhyoB87ZrsftBKG7d58PMfcH37WdHPBZzhJHM=w544-h544-l90-rj">
+                      <h2>RX 100</h2>
+                      <p>MC GAWTHI</p>
+                      <button class="tree play-btn" data-index="9"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/j6r-vjZ4tY2AlScNLSCshTdvZ4mGxga2VlTRCupta2SbEjP5WISoN0Ef0Xqf0OoN-odlnrAA1ia_l4M=w544-h544-l90-rj">
+                      <H2>SHAKY SHAKY</H2>
+                      <p>SANJU RATHOD & G-SPXRK</p>
+                      <button class="tree play-btn" data-index="10"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/GvT0-xoON0AFOO5A6ymBOWQqxcEVPgeRczsMSGhEUPJI60zHk1n0MylGxbz510MFXyfunQTXN_UxEEE=w544-h544-l90-rj">
+                      <h2>PUSHPA PUSHPA </h2>
+                      <p>MIKA SINGH & NAKASH AZIZ</p>
+                      <button class="tree play-btn" data-index="11"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="https://lh3.googleusercontent.com/xlZs7zjh277lx98oHLHWOJc9l4abh9-cPtav9vvlRrrEt0XTqmmQYYK6mm0YJrAKWrbebJlKwtw43c4=w544-h544-l90-rj">
+                      <H2>TAUBA TAUBA </H2>
+                      <p>KARAN AUJIA TAUBA TAUBA</p>
+                      <button class="tree play-btn" data-index="12"><img src="images/button.svg" id="button"></button>
+                    </div>
+                    <div class="card">
+                      <img src="https://i.scdn.co/image/ab67616d00001e0205483f7e4a2a8f330dcc4c68">
+                      <h2>ONE BOTTLE </h2>
+                      <p>YO YO HONEY SINGH</p>
+                      <button class="tree play-btn" data-index="13"><img src="images/button.svg" id="button"></button>
+                    </div>
+                  </div>
+                  <div class="playbar">
+                    <audio id="audio-player" src="" controls style="display: none;"></audio>
+
+                    <div class="songinfo" id="song-info"></div>
+
+                    <div class="songbtn">
+                      <button class="bat1" id="prev-btn"><img src="images/previous.svg" alt="Previous"></button>
+                      <button class="bat2" id="main-play-btn">
+                        <img src="images/play.svg" alt="Play">
+                      </button>
+                      <button class="bat3" id="next-btn"><img src="images/next.svg" alt="Next"></button>
+                    </div>
+                    <input type="range" id="seekbar" value="0" min="0" step="1">
+                    <div class="songtime">
+                      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                  </div>
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+        <div class=" card1">
+          <a href="/playlist/badshah"><button class="button"><img class="images"
+                src="https://book-my-singer.s3.ap-south-1.amazonaws.com/website-assets/artist/Badshah/Hire+Badshah+for+College+events.webp"
+                alt="YO YO HONEY SINGH"></button></a>
+          <a href="/playlist1/bantai"><button class="button"><img class="images"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGnLbMpm8Qn93weFJBw7Vz-Z00uSUgKfhaJw&amp;s"
+                alt="EMIWAY BANTAI"></button></a>
+          <a href="/playlist2/honey singh"><button class="button"><img class="images"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCnJ-Hp2YdHCMEg6s14H0z4xQL-ei7l--eSVSkgyOs9VEQaUan4y_Xc_ZZrjUo_0P_9pGeOrHMAmw7vbFBYpQbA"
+                alt="BADSHAH"></button></a>
+          <a href="/playlist3/mc stan"><button class="button"><img class="images"
+                src="https://assets.gqindia.com/photos/63ea07c05cd4fca7346cb8bd/1:1/w_1080,h_1080,c_limit/MC-Stan_02.jpg"
+                alt="MC STAN"></button></a>
+          <a href="playlist4/diljit"><button class="button"><img class="images"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwrwLVtjXYhla7gValde-M41yVBWjrILtp2g&amp;s"
+                alt="DILJIT DOSANJH"></button></a>
+          <a href="playlist5/GURU"><button class="button"><img class="images"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs3zevd0M23almNjC9AAVy9GkJp8OQD5ZA_w&amp;s"
+                alt="GURU RANDHAWA"></button></a>
+          <a href="playlist6/amit trivedi"><button class="button"><img class="images"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJgtXZwp7AdI418edhoHBDTqhX-RKe7HGFw&amp;s"
+                alt="amit trivedi"></button></a>
+          <a href="playlist7/kk"><button class="button"><img class="images"
+                src="https://www.bollywoodhungama.com/wp-content/uploads/2022/06/10-of-KK%E2%80%99s-best-songs-that-will-remain-as-evergreen-memories-of-the-singer-1.jpg"
+                alt="KK"></button></a>
+          <a href="playlist8/dragons"><button class="button"><img class="images"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyt4b9fhBQg2X73euf1CR5J2QbOkkkIaIllw&amp;s"
+                alt="IMAGINE DRAGONS"></button></a>
+          <a href="playlist9/alan"><button class="button"><img class="images"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrz3A70jRQLC6BvYsBMCBpWaF5NjRQ9T910w&amp;s"
+                alt="ALAN WALKER"></button></a>
+          <a href="playlist10/swift"><button class="button"><img class="images"
+                src="https://www.mensjournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MjEzMzAyMDk5MjU2MDI2OTcz/taylor-swift-kylie-kelce-comments.jpg"
+                alt="TAYLOR SWIFT"></button></a>
+        </div>
+        <h1 class="a"> TRENDING SONGS </h1>
+        <div class="r">
+          <div class="d">
+            <img
+              src="https://i.ytimg.com/vi/roz9sXFkTuE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLCA1PW5loA-mAwxKPk3s8zyr3qZuw">
+            <button class="tree play-btn" data-index="14"><img src="images/button.svg" id="button"></button>
+          </div>
+          <div class="d">
+            <img
+              src="https://i.ytimg.com/vi/nFgsBxw-zWQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLB5gK0JfQxtsImT3Ce4QdO09pt79Q">
+            <button class="tree play-btn" data-index="15"><img src="images/button.svg" id="button"></button>
+          </div>
+          <div class="d">
+            <img
+              src="https://i.ytimg.com/vi/Hg3sxWq4A_0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBloCyYxiGtXETvcCO9a99C32auCA">
+            <button class="tree play-btn" data-index="16"><img src="images/button.svg" id="button"></button>
+          </div>
+          <div class="d">
+            <img
+              src="https://i.ytimg.com/vi/-eoMTGNtjoQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBj3tTCtlcjSFtGYgzksxCzbSoLgw">
+            <button class="tree play-btn" data-index="17"><img src="images/button.svg" id="button"></button>
+          </div>
+          <div class="d">
+            <img
+              src="https://i.ytimg.com/vi/pxZTbeobtW0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLDIrabhO4aTJ20PrgOnmkL7uYkfoQ">
+            <button class="tree play-btn" data-index="6"><img src="images/button.svg" id="button"></button>
+          </div>
+          <div class="d">
+            <img
+              src="https://i.ytimg.com/vi/NZ1EBaqDL0M/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBzpNCXoq613B8beZck1iHgz0Qjmg">
+            <button class="tree play-btn" data-index="18"><img src="images/button.svg" id="button"></button>
+          </div>
+          <div class="d">
+            <img
+              src="https://i.ytimg.com/vi/rcPuG_PkAf8/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLDCXzw8n2lZsE63Gjgp3IWzneYemw">
+            <button class="tree play-btn" data-index="5"><img src="images/button.svg" id="button"></button>
+          </div>
+        </div>
+        <div class="range">
+          <h2>YOUR FAVOURITE </h2>
+          <div class="r">
+            <div class="d">
+              <img
+                src="https://i.ytimg.com/vi/-pvt6tQsOqQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLAFjqR4z3_el6tLPwpJO0MYdsd5DA">
+              <button class="tree play-btn" data-index="21"><img src="images/button.svg" id="button"></button>
+            </div>
+            <div class="d">
+              <img
+                src="https://i.ytimg.com/vi/mNuhKUOD_A0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLA5lFZRtmH-GeJcE3m7J5wJY81Rog">
+              <button class="tree play-btn" data-index="20"><img src="images/button.svg" id="button"></button>
+            </div>
+            <div class="d">
+              <img
+                src="https://i.ytimg.com/vi/knGCfzm4jWs/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLASEALHlKpxthNEEev7cDooXgiMQg">
+              <button class="tree play-btn" data-index="4"><img src="images/button.svg" id="button"></button>
+            </div>
+            <div class="d">
+              <img
+                src="https://i.ytimg.com/vi/c8iCUDDOgtI/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLAkhVXgBYA0rguexXkSpCxFmSux4w">
+              <button class="tree play-btn" data-index="19"><img src="images/button.svg" id="button"></button>
+            </div>
+            <div class="d">
+              <img
+                src="https://i.ytimg.com/vi/bwEd1QJU5iU/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLDM81GHl3tkxoZscKFoNfskBq1Ymg">
+              <button class="tree play-btn" data-index="12"><img src="images/button.svg" id="button"></button>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          &copy; 2025 heartune. All rights reserved.
+        </footer>
+      </div>
+    </div>
+    <script src="/index.js"></script>
+
+</body>
+
+</html>

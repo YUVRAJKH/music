@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #0f2027);
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --text-light: #fff;
+      --text-muted: #ddd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: var(--bg-gradient);
+      background-size: 400% 400%;
+      animation: gradientBG 18s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Bubbles */
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      animation: rise 20s infinite ease-in;
+      z-index: 0;
+    }
+
+    .bubble:nth-child(n+1):nth-child(-n+15) {
+      width: calc(10px + 30 * (var(--i)));
+      height: calc(10px + 30 * (var(--i)));
+      left: calc(5% + 6% * var(--i));
+      animation-duration: calc(15s + 2s * var(--i));
+    }
+
+    @keyframes rise {
+      0% { bottom: -100px; opacity: 0; }
+      40% { opacity: 0.25; }
+      100% { bottom: 120%; opacity: 0; }
+    }
+
+    .signin-container {
+      position: relative;
+      backdrop-filter: blur(18px);
+      background-color: var(--glass-bg);
+      padding: 2.5rem;
+      border-radius: 1.5rem;
+      width: 360px;
+      color: var(--text-light);
+      z-index: 1;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .signin-container h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 0.6rem;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .form-group input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-group input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .password-toggle {
+      position: relative;
+    }
+
+    .password-toggle button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .password-toggle button:hover {
+      opacity: 1;
+    }
+
+    .signin-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 0.7rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .signin-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.02);
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .signup-link a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .signup-link a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 15 custom bubbles -->
+  <div class="bubble" style="--i:1;"></div>
+  <div class="bubble" style="--i:2;"></div>
+  <div class="bubble" style="--i:3;"></div>
+  <div class="bubble" style="--i:4;"></div>
+  <div class="bubble" style="--i:5;"></div>
+  <div class="bubble" style="--i:6;"></div>
+  <div class="bubble" style="--i:7;"></div>
+  <div class="bubble" style="--i:8;"></div>
+  <div class="bubble" style="--i:9;"></div>
+  <div class="bubble" style="--i:10;"></div>
+  <div class="bubble" style="--i:11;"></div>
+  <div class="bubble" style="--i:12;"></div>
+  <div class="bubble" style="--i:13;"></div>
+  <div class="bubble" style="--i:14;"></div>
+  <div class="bubble" style="--i:15;"></div>
+
+  <div class="signin-container">
+    <h2>Sign In</h2>
+    <form action="/Signin" method="post">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-group password-toggle">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="••••••••" required>
+        <button type="button" onclick="togglePassword()">👁️</button>
+      </div>
+
+      <button class="signin-btn" type="submit">Sign In</button>
+    </form>
+    <div class="signup-link">
+      Don't have an account? <a href="/signup">Sign up</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passInput = document.getElementById('password');
+      passInput.type = passInput.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+
+</body>
+</html>

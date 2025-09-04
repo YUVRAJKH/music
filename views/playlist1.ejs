@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= singer %> Playlist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    
+     body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0 ;
+    }
+
+    .ccccc {
+      background-image:url("/images/emiway-bantai-performance-gesture-21vie2i6qsswxfiu.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height:150%;
+      
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .cardContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(1px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      width: 200px;
+      padding: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top:20px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0 0 10px;
+    }
+
+    .play-btn {
+      background-color: #00ffaa;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .play-btn:hover {
+      background-color: #00dd99;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    ul li {
+      margin: 10px auto;
+      text-align: center;
+      font-size: 16px;
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+  .run {
+    position:absolute;
+    bottom: 0;
+    left: 100;
+    background-color:#ffffff0c;
+    padding: 11px;
+    width: 100%;
+    z-index: 999;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom:-350px;
+    border: solid black 2px;
+}
+  </style>
+</head>
+<body>
+  <div Class="ccccc">
+  <div class="cardContainer">
+<div class="card">
+   <img src=  "https://i.scdn.co/image/ab67616d00001e02c25f4352ea79a9a510ddfe11">
+  <h2>JHAKAS</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'Emiway Bantai - Jhakas [Official Audio] (Prod by Liogans)  King Of The Streets (Album).mp3')">Play</button>
+</div>
+
+<div class="card">
+   <img src=  "https://i.scdn.co/image/ab67616d00001e02abad0b3e78abb2cca4730393">
+  <h2> DUBAI COMPANY</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'EMIWAY BANTAI  - DUBAI COMPANY  (MUSIC BY. TONY JAMES )  OFFICIAL MUSIC VIDEO.mp3')">Play</button>
+</div>
+
+<div class="card">
+  <img src=https://i.ytimg.com/vi/l2Qi31JfXvc/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC02wZgWs8Cg5hwKu12VO6O557jEA
+>
+    <h2>PAISA PAISA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'EMIWAY BANTAI - PAISA PAISA  ( TONY JAMES )  OFFICIAL MUSIC VIDEO.mp3')">Play</button>
+</div>
+<div class="card">
+   <img src=  "https://i.scdn.co/image/ab67616d00001e026be629382e421292a1c658d6">
+  <h2>GRIND</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'EMIWAY - GRIND (PROD. FLAMBOY) (OFFICIAL MUSIC VIDEO).mp3')">Play</button>
+</div>
+<div class="card">
+  <img src=https://i.ytimg.com/vi/GuGYYdwcPYw/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBuIlmx6UwaezupN9c0XTejkv8Ctg
+>
+  <h2>COMPANY</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'EMIWAY - COMPANY .mp3')">Play</button>
+</div>
+<div class="card">
+  <img  src="https://i.ytimg.com/vi/SP-lxS8viGU/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAjZ_6s2i0OThBXVKcZOsMwbim5mQ
+    ">
+  <h2>BADSHA</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>','EMIWAY BANTAI  -  BADSHAH  (PROD BY TONY JAMES )  OFFICIAL MUSIC VIDEO.mp3')">Play</button>
+</div><div class="card">
+  <img src= "https://i.ytimg.com/vi/nu2MOmczxwQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA6miZFg23BTdqUE7k1QMYDBeDpAQ">
+  <h2>KHATAM HUE WAANDE</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>', 'EMIWAY - KHATAM HUE WAANDE (Prod.YOKI) (OFFICIAL MUSIC VIDEO).mp3')">Play</button>
+</div>
+<div class="card">
+  <img src="https://i.ytimg.com/vi/ZTZkwKzd7l0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBcb_35yo2ypF_kS_KdJCC4oOJK4g">
+  <h2>SAMAJH MAIN AAYA KAY</h2>
+  <button class="play-btn" onclick="playSong('<%= singer %>','EMIWAY-SAMAJH MEIN AAYA KYA_ (OFFICIAL MUSIC VIDEO).mp3')">Play</button>
+</div>
+  <ul>
+    <% songs.forEach(song => { %>
+    <% }); %>
+  </ul>
+
+  <audio class= 'run' id="audioPlayer" controls style="display:flex;"></audio>
+  </div>
+</div>
+
+  <script>
+    function playSong(singer, songName) {
+      const audioPlayer = document.getElementById("audioPlayer");
+      audioPlayer.src = `/songs/${singer}/${songName}`;
+      audioPlayer.style.display = "block";
+      audioPlayer.play();
+    }
+  </script>
+
+</body>
+</html>

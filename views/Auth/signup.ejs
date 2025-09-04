@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - Elevated</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(-45deg, #ff4e50, #f9d423, #24c6dc, #5433ff);
+      background-size: 400% 400%;
+      animation: gradient 20s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .signup-container {
+      width: 380px;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-align: center;
+    }
+
+    .signup-container h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: #eaeaea;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.7rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .signup-btn {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      background: #ffffff22;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .signup-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .login-link {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .login-link a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 420px) {
+      .signup-container {
+        width: 90%;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>Create Account</h2>
+    <form action="/Signup" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="/login">Log in</a>
+    </div>
+  </div>
+
+</body>
+</html>
